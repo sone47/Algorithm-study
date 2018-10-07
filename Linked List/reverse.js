@@ -7,7 +7,7 @@ function reverse(head) {
   let prev = null;
   let next = null;
 
-  while(pointer) {
+  while(pointer && pointer.next) {
     next = pointer.next;
     pointer.next = prev;
     prev = pointer;
@@ -32,3 +32,5 @@ const head = {
 };
 
 console.log(reverse(head));
+console.log(reverse());
+console.log(reverse({}));
