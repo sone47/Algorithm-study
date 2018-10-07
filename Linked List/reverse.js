@@ -13,7 +13,6 @@ function reverse(head) {
     prev = pointer;
     pointer = next;
   }
-  head.next = null;
 
   return prev;
 }
