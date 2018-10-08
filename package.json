@@ -1,0 +1,19 @@
+{
+  "name": "algorithm-study",
+  "version": "1.0.0",
+  "description": "记录一个前端学习算法的过程。 使用 JavaScript 实现。",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "keywords": [
+    "front-end",
+    "algorithm",
+    "js"
+  ],
+  "author": "sone",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
