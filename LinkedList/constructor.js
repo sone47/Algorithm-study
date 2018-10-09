@@ -13,7 +13,7 @@ class LinkedList {
 
   findByValue(value) {
     let p = this.head;
-    while(p && p.data !== value) {
+    while (p && p.data !== value) {
       p = p.next;
     }
 
@@ -23,9 +23,9 @@ class LinkedList {
   findByIndex(index) {
     let p = this.head;
     let i = 0;
-    while(i++ < index) {
+    while (i++ < index) {
       p = p.next;
-      if(!p) {
+      if (!p) {
         throw new Error('index is greater than linked-list length.');
       }
     }
@@ -35,7 +35,7 @@ class LinkedList {
 
   findPrev(value) {
     let p = this.head;
-    while(p.next && p.next.data !== value) {
+    while (p.next && p.next.data !== value) {
       p = p.next;
     }
 
@@ -43,9 +43,9 @@ class LinkedList {
   }
 
   insert(newNodeValue, nodeValue) {
-    if(nodeValue !== undefined) {
+    if (nodeValue !== undefined) {
       const node = this.findByValue(nodeValue);
-      if(node === this.unexistValue) {
+      if (node === this.unexistValue) {
         throw new Error('You are inserting after an unexist node.');
       }
 
@@ -62,11 +62,11 @@ class LinkedList {
 
   remove(nodeValue) {
     const node = this.findByValue(nodeValue);
-    if(node === this.unexistValue) {
+    if (node === this.unexistValue) {
       throw new Error('You are removing an unexist node.');
     }
 
-    if(node !== this.head) {
+    if (node !== this.head) {
       const prev = this.findPrev(nodeValue);
       prev.next = node.next;
     } else {
@@ -77,25 +77,11 @@ class LinkedList {
 
   display() {
     let p = this.head;
-    while(p) {
+    while (p) {
       console.log(p.data);
       p = p.next;
     }
   }
 }
 
-const LList = new LinkedList();
-LList.insert('chen');
-LList.insert('curry', 'chen');
-LList.insert('sang');
-LList.insert('zhao');
-LList.display(); // zhao => sang => chen => curry
-console.log('-------------find by item------------')
-console.log(LList.findByValue('chen'));
-console.log('-------------remove item------------')
-LList.remove('chen');
-LList.display(); // zhao => sang => curry
-console.log('-------------find by item------------')
-console.log(LList.findByValue('chen'));
-console.log('-------------find by index------------')
-console.log(LList.findByIndex(2));
+module.exports = LinkedList;
