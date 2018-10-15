@@ -4,12 +4,12 @@
 
 function selectSort(arr) {
   const length = arr.length;
-  for(let i = 0; i < length; i++) {
-    let max = 0;
+  for (let i = 0; i < length; i++) {
+    let min = Infinity;
     let index = 0;
-    for(let j = i; j < length; j++) {
-      if(max < arr[j]) {
-        max = arr[j];
+    for (let j = i; j < length; j++) {
+      if (min > arr[j]) {
+        min = arr[j];
         index = j;
       }
     }
