@@ -8,8 +8,6 @@ function calculator(expression) {
   const numberStack = new Stack();
   const symbolStack = new Stack();
   const priority = {
-    '(': 100,
-    ')': 100,
     '*': 10,
     '/': 10,
     '+': 1,
