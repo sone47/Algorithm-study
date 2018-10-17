@@ -6,15 +6,15 @@ const Stack = require('./constructor');
 
 function isValidParentheses(str) {
   const parenthesesStack = new Stack();
-  const leftParentheses = /\{\[\(/;
-  const rightParentheses = /\}\]\)/;
+  const leftParentheses = /[\{\[\(]/;
+  const rightParentheses = /[\}\]\)]/;
 
-  for (let i = 0; i < str; i++) {
+  for (let i = 0; i < str.length; i++) {
     const char = str[i];
     if (leftParentheses.test(char)) {
       parenthesesStack.push(char);
     } else if (rightParentheses.test(char)) {
-      if (!char === leftParentheses.pop()) {
+      if (!char === parenthesesStack.pop()) {
         return false;
       }
     } else {
@@ -22,7 +22,7 @@ function isValidParentheses(str) {
     }
   }
 
-  return true;
+  return parenthesesStack.isEmpty();
 }
 
 module.exports = isValidParentheses;

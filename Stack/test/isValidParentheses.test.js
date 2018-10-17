@@ -5,5 +5,5 @@ test('valid parenthese match', () => {
 });
 
 test('invalid parenthese match', () => {
-  expect(isValidParentheses('[(]')).toBe(true);
+  expect(isValidParentheses('[(]')).toBe(false);
 });
