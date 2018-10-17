@@ -5,10 +5,7 @@
 class Queue {
   constructor() {
     this.tail = null;
-    this.head = {
-      data: null,
-      next: this.tail
-    };
+    this.head = null;
   }
 
   enqueue(value) {
@@ -16,15 +13,28 @@ class Queue {
       data: value,
       next: null
     }
-    this.tail.next = newNode;
-    this.tail = newNode;
-    return true;
+
+    if (this.isEmpty()) {
+      this.tail = newNode;
+      this.head = this.tail;
+    } else {
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
   }
 
   dequeue() {
+    if (this.isEmpty()) {
+      console.warn('Queue is empty.');
+      return false;
+    }
     const oldHead = this.head;
     this.head = oldHead.next;
     return oldHead;
+  }
+
+  isEmpty() {
+    return !this.head;
   }
 }
 
