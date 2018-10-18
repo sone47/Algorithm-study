@@ -33,7 +33,7 @@ class Steque {
       }
 
       const dequeueValue = tempStack.pop();
-      while (!stack.isEmpty()) {
+      while (!tempStack.isEmpty()) {
         stack.push(tempStack.pop());
       }
 

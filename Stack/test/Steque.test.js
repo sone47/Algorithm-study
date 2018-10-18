@@ -14,7 +14,7 @@ test('dequeue', () => {
   queue.enqueue(3);
   queue.enqueue(4);
   expect(queue.size).toBe(4);
-  queue.dequeue();
+  expect(queue.dequeue()).toBe(1);
   expect(queue.size).toBe(3);
 });
 
