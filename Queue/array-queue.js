@@ -48,6 +48,11 @@ class Queue {
   isFull() {
     return this.tail === this.size;
   }
+
+  clear() {
+    this.head = 0;
+    this.tail = 0;
+  }
 }
 
 module.exports = Queue;
