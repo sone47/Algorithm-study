@@ -20,6 +20,10 @@ const merge = (arr1, arr2) => {
   let i = 0;
   let j = 0;
 
+  if (arr1[arr1.length - 1] <= arr2[0]) {
+    return arr1.concat(arr2);
+  }
+
   while (i < arr1.length && j < arr2.length) {
     if (arr1[i] < arr2[j]) {
       arr.push(arr1[i++]);
